@@ -1,0 +1,127 @@
+.page-header .page-header-menu .search-form {
+	width: 200px;
+}
+
+.mt-checkbox-inline, .mt-radio-inline {
+	padding: 0;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+	padding: 5px;
+	vertical-align: middle;
+}
+
+.form-group {
+	/*margin-bottom: 0;*/
+}
+
+.pagination {
+    margin: 0;
+}
+
+.form .form-body, .portlet-form .form-body {
+    padding: 0;
+	margin-bottom: 10px;
+}
+
+.form .form-actions, .portlet-form .form-actions {
+    padding: 10px;
+}
+
+.table {
+    margin-bottom: 10px;
+}
+
+.portlet.light .dataTables_wrapper .dt-buttons {
+    margin-top: -54px;
+}
+
+.rotate {
+	/* Safari */
+	-webkit-transform: rotate(-90deg);
+
+	/* Firefox */
+	-moz-transform: rotate(-90deg);
+
+	/* IE */
+	-ms-transform: rotate(-90deg);
+
+	/* Opera */
+	-o-transform: rotate(-90deg);
+
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	
+	text-align: center;
+
+}
+
+table td {
+	font-size: 0.8em !important;
+}
+
+a {
+    color: #e20a1b;
+    text-decoration: none;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav>li .dropdown-menu li>a>i {
+    color: #e20a1b;
+    color: white;
+}
+
+.hide { display: none; }
+
+.portlet.cummins, .portlet.box.cummins>.portlet-title, .portlet>.portlet-body.cummins {
+	background-color: #d02323 !important;
+	/*color: white !important;*/
+}
+
+.portlet.box.cummins {
+	border: 1px solid #d02323;
+    border-top: 0;
+}
+
+.portlet.box.cummins>.portlet-title>.caption, .portlet.box.cummins>.portlet-title>.caption>i {
+    color: #FFF;
+}
+
+a {
+	color: #d02323;
+}
+
+.has-error {
+    border-color: #d02323;
+    border-width: 2px;
+}
+
+.color-cummins {
+	color: #d02323 !important;
+}
+
+.backgound-cummins{
+	background-color: #EC9393 !important;
+}
+
+select {
+	padding: 5px !important;
+	padding-right: 0px !important;
+}
+
+.page-header .page-header-top .page-logo .logo-default {
+    margin: 0 !important;
+}
+
+// Sobrescritura del hover
+.table-hover>tbody>tr.hover-black:hover, .table-hover>tbody>tr.hover-black:hover>td{
+	background-color: #333333 !important;
+}
+
+.table-hover>tbody>tr.hover-red:hover, .table-hover>tbody>tr.hover-red:hover>td{
+	background-color: red !important;
+}
+
+#modal_imagen_elemento{
+	width: 600px !important;
+	left: 45% !important;
+}

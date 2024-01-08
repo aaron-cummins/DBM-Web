@@ -1,0 +1,43 @@
+{
+	"name": "cakephp/cakephp",
+	"description": "The CakePHP framework",
+	"type": "library",
+	"keywords": ["framework"],
+	"homepage": "http://cakephp.org",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "CakePHP Community",
+			"homepage": "https://github.com/cakephp/cakephp/graphs/contributors"
+		}
+	],
+	"autoload": {
+		"classmap": [
+			"app/Lib/azure_simple_provider.class.php"
+		]
+	},
+	"support": {
+		"issues": "https://github.com/cakephp/cakephp/issues",
+		"forum": "http://stackoverflow.com/tags/cakephp",
+		"irc": "irc://irc.freenode.org/cakephp",
+		"source": "https://github.com/cakephp/cakephp"
+	},
+	"require": {
+		"php": ">=5.2.8",
+		"ext-mcrypt": "*",
+		"firebase/php-jwt": "4.0",
+		"thenetworg/oauth2-azure": "1.2.0",
+		"league/oauth2-client": "1.4.2",
+		"ralouphie/getallheaders": "2.0.5",
+		"paragonie/random_compat": "^2.0",
+		"aws/aws-sdk-php": "^3.133",
+		"phpmailer/phpmailer": "^6.1"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "3.7.*",
+		"cakephp/debug_kit" : "2.2.*"
+	},
+	"bin": [
+		"lib/Cake/Console/cake"
+	]
+}

@@ -1,0 +1,22 @@
+# ignore all logs
+*.log
+
+#ignore migration files
+vendor/interno
+vendor/amazon/sqs/CronContinuaciones.php
+
+#ignore tmp files
+app/tmp/
+
+#ignore test files
+test
+
+#ignore gitignore updated
+gitignoredupdated.sh
+
+#ignore debugkit
+Plugin/DebugKit
+
+#config file
+configuracion-dbm.php
+472974868278-gq1q5jmtu8pc52do2go4nf9ksbf818nl.apps.googleusercontent.com_secreto_cliente.json

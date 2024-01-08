@@ -1,0 +1,1 @@
+/bitacora/images/elementos/<?php echo $return;?>.png

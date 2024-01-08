@@ -1,0 +1,1101 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+	<title></title> 
+	<META NAME="AUTHOR" CONTENT="Salmon Software Ltda." />	
+	<META NAME="ROBOTS" CONTENT="NONE" />
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache, mustrevalidate" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 2010 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+	<meta name="format-detection" content="telephone=no">
+	
+	<link rel="stylesheet" href="../css/jquery.mobile-1.4.5.min.css" />
+	<script src="../js/jquery-1.8.2.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="../js/load_db_dcc.js"></script>
+	<script src="../js/custom_dcc.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".link").click(function() {
+				/*var val = $(this).attr("val");
+				localStorage.setItem("trabajo_finalizado", val);
+				window.location = "./p12_comentarios.html";
+				return true;*/
+			});
+		});
+	</script>
+</head>
+<body>
+<div data-role="page">
+	<div data-role="header" data-theme="b">
+		<h1>Pauta Puesta en Marcha</h1>
+	</div>
+<div data-role="content">
+<table cellspacing="0" cellpadding="0">
+  <col>
+  <col >
+  <col span="2">
+  <col >
+  <col  span="3">
+  <tr>
+    <td colspan="2"></td>
+    <td colspan="6" align="center" ><strong>DATOS</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" >FECHA DE INSPECCIÓN</td>
+    <td colspan="6" ><input type="date" name="pm_fecha" id="pm_fecha"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >NOMBRE DEL AUTOR</td>
+    <td colspan="6" ><input type="text" name="textfield49" id="textfield49"></td>
+  </tr>
+  <tr>
+    <td colspan="2" ><strong>INFORMACIÓN DEL EQUIPO</strong></td>
+    <td colspan="6" align="center" ><strong>DATOS</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Fecha puesta en servicio (dd/mm/aa)</td>
+    <td colspan="6" ><input type="date" name="pm_fecha_servicio" id="pm_fecha_servicio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Modelo del motor</td>
+    <td colspan="6" ><input type="text" name="textfield47" id="textfield47"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >ESN (Nº de Serie Motor)</td>
+    <td colspan="6" ><input type="text" name="pm_esn" id="pm_esn"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >CPL</td>
+    <td colspan="6" ><input type="text" name="textfield45" id="textfield45"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Fabricante    del Equipo</td>
+    <td colspan="6" ><input type="text" name="textfield44" id="textfield44"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Modelo del Equipo</td>
+    <td colspan="6" ><input type="text" name="textfield43" id="textfield43"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Serie del Equipo</td>
+    <td colspan="6" ><input type="text" name="pm_serie" id="pm_serie"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Número Interno del equipo</td>
+    <td colspan="6" ><input type="text" name="pm_numero_interno" id="pm_numero_interno"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Horas    de Operación del Motor (Registro de Cense o Quantum)</td>
+    <td colspan="5" ><input type="text" name="textfield40" id="textfield40"></td>
+    <td width="38">&nbsp;&nbsp;Hr</td>
+  </tr>
+  <tr>
+    <td colspan="2" >Estatus    del Equipo (especificar nuevo o usado)</td>
+    <td colspan="6" ><select name="pm_estatus" id="pm_estatus">
+      <option selected="selected" disabled="disabled">Estatus</option>
+      <option value="1">Nuevo</option>
+      <option value="2">Usado</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td colspan="2" ><strong>INFORMACIÓN DEL CLIENTE</strong></td>
+    <td colspan="6" align="center" ><strong>DATOS</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Nombre    del Cliente</td>
+    <td colspan="6" ><input type="text" name="textfield51" id="textfield51"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Nombre    y Título Contacto del Cliente</td>
+    <td colspan="6" ><input type="text" name="textfield52" id="textfield52"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Dirección    (incluir ciudad, región y país)</td>
+    <td colspan="6" ><input type="text" name="textfield53" id="textfield53"></td>
+  </tr>
+  <tr>
+    <td colspan="2" ><strong>INFORMACIÓN DEL DISTRIBUIDOR</strong></td>
+    <td colspan="6" align="center" ><strong>DATOS</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Nombre    del Distribuidor</td>
+    <td colspan="6" ><input type="text" name="textfield37" id="textfield37"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Locación    del Distribuidor</td>
+    <td colspan="6" ><input type="text" name="textfield38" id="textfield38"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Código    del Distribuidor</td>
+    <td colspan="6" ><input type="text" name="textfield39" id="textfield39"></td>
+  </tr>
+  <tr>
+    <td width="254" ></td>
+    <td width="1100" ></td>
+    <td width="126" ></td>
+    <td width="38"></td>
+    <td width="95"></td>
+    <td width="114"></td>
+    <td width="76"></td>
+    <td width="38"></td>
+  </tr>
+  <tr>
+    <td colspan="8" ><strong>INSPECCIÓN DEL MOTOR</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" ><strong>Chequear    lo siguiente antes de echar a correr el motor, ajuste si es necesario</strong></td>
+    <td colspan="2" align="center" ><strong>SI</strong></td>
+    <td colspan="2" align="center"><strong>NO</strong></td>
+    <td colspan="2" align="center"><strong>NO    APLICA</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Marca    de Comienzo de garantía en placa de datos motor</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_01_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_01_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_01_garantia" id="radio" value="a"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Montaje    de motor y accesorios</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_02_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_02_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_02_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >Fugas    de combustible, lubricante, aceite o refrigerante</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_03_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_03_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_03_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >Instalación    de sistema de combustible y nivel de combustible</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_04_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_04_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_04_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >Instalación    de sistema de lubricación y nivel de aceite</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_05_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_05_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_05_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >Instalación    de sistema de pre-lubricación</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_06_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_06_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_06_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >Instalación    de sistema Centinel y nivel de estanque Centinel</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_07_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_07_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_07_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >Instalación    de sistema de refrigeración y nivel de refrigerante</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_08_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_08_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_08_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >Nivel    de concentración de DCA y anticongelante en refrigerante</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_09_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_09_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_09_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >Instalación    de sistema eléctrico y nivel de electrolito de batería</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_10_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_10_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_10_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >Filtros    de aire</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_11_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_11_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_11_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >Respiraderos    de motor</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_12_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_12_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_12_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >Tensión    de correas (todas)</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_13_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_13_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_13_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >Luces    de cabina del ECM funcionan apropiadamente</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_14_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_14_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_14_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >No    hay códigos de falla activos (Quantum o Cense)</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_15_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_15_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_15_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td colspan="2" >Limpiar    códigos de falla inactivos (Quantum o Cense)</td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_16_garantia" id="radio" value="s"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_16_garantia" id="radio" value="n"></td>
+    <td colspan="2" align="center" ><input type="radio" data-role="none" name="pm_16_garantia" id="radio" value="a"></td>
+    </tr>
+  <tr>
+    <td ></td>
+    <td ></td>
+    <td ></td>
+    <td width="38"></td>
+    <td width="95"></td>
+    <td width="114"></td>
+    <td width="76"></td>
+    <td width="38"></td>
+  </tr>
+  <tr>
+    <td ></td>
+    <td ></td>
+    <td colspan="3" align="center" ><strong>MEDIDA</strong></td>
+    <td colspan="3" align="center"><strong>NO APLICA</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Verificar    comunicación con ECM Cense, registrando el/los código(s) de calibración</td>
+    <td colspan="3" ><input type="text" name="textfield" id="textfield"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox" id="pm_c1_garantia"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Verificar comunicación con ECM Quantum,    registrando el/los código(s) de calibración</td>
+    <td colspan="3" ><input type="text" name="textfield2" id="textfield2"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox2" id="checkbox2"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Juego    axial del cigüeñal</td>
+    <td colspan="2" ><input type="text" name="textfield3" id="textfield3"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox3" id="checkbox3"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Juego axial del turbo HP-LBF</td>
+    <td colspan="2" ><input type="text" name="textfield4" id="textfield4"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox4" id="checkbox4"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Juego axial del turbo HP-LBM</td>
+    <td colspan="2" ><input type="text" name="textfield5" id="textfield5"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox5" id="checkbox5"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Juego axial del turbo HP-LBR</td>
+    <td colspan="2" ><input type="text" name="textfield6" id="textfield6"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox6" id="checkbox6"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Juego axial del turbo HP-RBF</td>
+    <td colspan="2" ><input type="text" name="textfield7" id="textfield7"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox7" id="checkbox7"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Juego axial del turbo HP-RBM</td>
+    <td colspan="2" ><input type="text" name="textfield8" id="textfield8"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox8" id="checkbox8"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Juego axial del turbo HP-RBR</td>
+    <td colspan="2" ><input type="text" name="textfield9" id="textfield9"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox9" id="checkbox9"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Juego axial del turbo LP-LBF</td>
+    <td colspan="2" ><input type="text" name="textfield10" id="textfield10"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox10" id="checkbox10"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Juego axial del turbo LP-LBM</td>
+    <td colspan="2" ><input type="text" name="textfield11" id="textfield11"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox11" id="checkbox11"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Juego axial del turbo LP-LBR</td>
+    <td colspan="2" ><input type="text" name="textfield12" id="textfield12"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox12" id="checkbox12"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Juego axial del turbo LP-RBF</td>
+    <td colspan="2" ><input type="text" name="textfield13" id="textfield13"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox13" id="checkbox13"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Juego axial del turbo LP-RBM</td>
+    <td colspan="2" ><input type="text" name="textfield14" id="textfield14"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox14" id="checkbox14"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Juego axial del turbo LP-RBR</td>
+    <td colspan="2" ><input type="text" name="textfield15" id="textfield15"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox15" id="checkbox15"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Tensión correa bomba de refrigerante</td>
+    <td colspan="2" ><input type="text" name="textfield16" id="textfield16"></td>
+    <td width="95">Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox16" id="checkbox16"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Tensión    correa de alternador</td>
+    <td colspan="2" ><input type="text" name="textfield17" id="textfield17"></td>
+    <td width="95">Lb    Inch</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox17" id="checkbox17"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Tensión    correa de ventilador</td>
+    <td colspan="2" ><input type="text" name="textfield18" id="textfield18"></td>
+    <td width="95">Lb    ft</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox18" id="checkbox18"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Presión    tapa radiador</td>
+    <td colspan="2" ><input type="text" name="textfield19" id="textfield19"></td>
+    <td width="95">???</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox19" id="checkbox19"></td>
+  </tr>
+  <tr>
+    <td ></td>
+    <td ></td>
+    <td ></td>
+    <td width="38"></td>
+    <td width="95"></td>
+    <td width="114" align="center"></td>
+    <td width="76" align="center"></td>
+    <td width="38" align="center"></td>
+  </tr>
+  <tr>
+    <td colspan="2" ><strong>COMPONENTES</strong></td>
+    <td colspan="3" align="center" ><strong>DATOS</strong></td>
+    <td colspan="3" align="center"><strong>NO APLICA</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" >N/P    correa bomba de agua</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox" id="checkbox"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >N/P    correa ventilador</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox2" id="checkbox2"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >N/P    correa alternador</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox3" id="checkbox3"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >N/P    filtro de Aceite</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox4" id="checkbox4"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >N/P    filtro de combustible</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox5" id="checkbox5"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >N/P  filtro de agua</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox6" id="checkbox6"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >N/P    filtro de aire primario</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox7" id="checkbox7"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >N/P    filtro de aire secundario</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox8" id="checkbox8"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Fabricante    del Prelub</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox9" id="checkbox9"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Prelub</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox10" id="checkbox10"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Fabricante    del Alternador</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox11" id="checkbox11"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Modelo    Alternador</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox12" id="checkbox12"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Serie    Alternador</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox13" id="checkbox13"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >N°    especificación alternador</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox14" id="checkbox14"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Fabricante    motor partida</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox15" id="checkbox15"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Modelo    motor partida</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox16" id="checkbox16"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Serie    Motor de Partida</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox17" id="checkbox17"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >N/P    Motor de Partida</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox18" id="checkbox18"></td>
+  </tr>
+  <tr>
+    <td rowspan="4" >BOMBA DE COMBUSTIBLE</td>
+    <td >CPL</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox19" id="checkbox19"></td>
+  </tr>
+  <tr>
+    <td >Código</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox" id="checkbox"></td>
+  </tr>
+  <tr>
+    <td >N/P</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox2" id="checkbox2"></td>
+  </tr>
+  <tr>
+    <td >Serie</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox3" id="checkbox3"></td>
+  </tr>
+  <tr>
+    <td rowspan="4" >HP-LBF</td>
+    <td >Fabricante</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox4" id="checkbox4"></td>
+  </tr>
+  <tr>
+    <td >Modelo</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox5" id="checkbox5"></td>
+  </tr>
+  <tr>
+    <td >N/P</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox6" id="checkbox6"></td>
+  </tr>
+  <tr>
+    <td >Serie</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox7" id="checkbox7"></td>
+  </tr>
+  <tr>
+    <td rowspan="4" >HP-LBM</td>
+    <td >Fabricante</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox8" id="checkbox8"></td>
+  </tr>
+  <tr>
+    <td >Modelo</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox9" id="checkbox9"></td>
+  </tr>
+  <tr>
+    <td >N/P</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox10" id="checkbox10"></td>
+  </tr>
+  <tr>
+    <td >Serie</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox11" id="checkbox11"></td>
+  </tr>
+  <tr>
+    <td rowspan="4" >HP-LBR</td>
+    <td >Fabricante</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox12" id="checkbox12"></td>
+  </tr>
+  <tr>
+    <td >Modelo</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox13" id="checkbox13"></td>
+  </tr>
+  <tr>
+    <td >N/P</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox14" id="checkbox14"></td>
+  </tr>
+  <tr>
+    <td >Serie</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox15" id="checkbox15"></td>
+  </tr>
+  <tr>
+    <td rowspan="4" >HP-RBF</td>
+    <td >Fabricante</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox16" id="checkbox16"></td>
+  </tr>
+  <tr>
+    <td >Modelo</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox17" id="checkbox17"></td>
+  </tr>
+  <tr>
+    <td >N/P</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox18" id="checkbox18"></td>
+  </tr>
+  <tr>
+    <td >Serie</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox19" id="checkbox19"></td>
+  </tr>
+  <tr>
+    <td rowspan="4" >HP-RBM</td>
+    <td >Fabricante</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox" id="checkbox"></td>
+  </tr>
+  <tr>
+    <td >Modelo</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox2" id="checkbox2"></td>
+  </tr>
+  <tr>
+    <td >N/P</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox3" id="checkbox3"></td>
+  </tr>
+  <tr>
+    <td >Serie</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox4" id="checkbox4"></td>
+  </tr>
+  <tr>
+    <td rowspan="4" >HP-RBR</td>
+    <td >Fabricante</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox5" id="checkbox5"></td>
+  </tr>
+  <tr>
+    <td >Modelo</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox6" id="checkbox6"></td>
+  </tr>
+  <tr>
+    <td >N/P</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox7" id="checkbox7"></td>
+  </tr>
+  <tr>
+    <td >Serie</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox8" id="checkbox8"></td>
+  </tr>
+  <tr>
+    <td rowspan="4" >LP-LBF</td>
+    <td >Fabricante</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox9" id="checkbox9"></td>
+  </tr>
+  <tr>
+    <td >Modelo</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox10" id="checkbox10"></td>
+  </tr>
+  <tr>
+    <td >N/P</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox11" id="checkbox11"></td>
+  </tr>
+  <tr>
+    <td >Serie</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox12" id="checkbox12"></td>
+  </tr>
+  <tr>
+    <td rowspan="4" >LP-LBM</td>
+    <td >Fabricante</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox13" id="checkbox13"></td>
+  </tr>
+  <tr>
+    <td >Modelo</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox14" id="checkbox14"></td>
+  </tr>
+  <tr>
+    <td >N/P</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox15" id="checkbox15"></td>
+  </tr>
+  <tr>
+    <td >Serie</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox16" id="checkbox16"></td>
+  </tr>
+  <tr>
+    <td rowspan="4" >LP-LBR</td>
+    <td >Fabricante</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox17" id="checkbox17"></td>
+  </tr>
+  <tr>
+    <td >Modelo</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox18" id="checkbox18"></td>
+  </tr>
+  <tr>
+    <td >N/P</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox19" id="checkbox19"></td>
+  </tr>
+  <tr>
+    <td >Serie</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox" id="checkbox"></td>
+  </tr>
+  <tr>
+    <td rowspan="4" >LP-RBF</td>
+    <td >Fabricante</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox2" id="checkbox2"></td>
+  </tr>
+  <tr>
+    <td >Modelo</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox3" id="checkbox3"></td>
+  </tr>
+  <tr>
+    <td >N/P</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox4" id="checkbox4"></td>
+  </tr>
+  <tr>
+    <td >Serie</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox5" id="checkbox5"></td>
+  </tr>
+  <tr>
+    <td rowspan="4" >LP-RBM</td>
+    <td >Fabricante</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox6" id="checkbox6"></td>
+  </tr>
+  <tr>
+    <td >Modelo</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox7" id="checkbox7"></td>
+  </tr>
+  <tr>
+    <td >N/P</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox8" id="checkbox8"></td>
+  </tr>
+  <tr>
+    <td >Serie</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox9" id="checkbox9"></td>
+  </tr>
+  <tr>
+    <td rowspan="4" >LP-RBR</td>
+    <td >Fabricante</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox10" id="checkbox10"></td>
+  </tr>
+  <tr>
+    <td >Modelo</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox11" id="checkbox11"></td>
+  </tr>
+  <tr>
+    <td >N/P</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox12" id="checkbox12"></td>
+  </tr>
+  <tr>
+    <td >Serie</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox13" id="checkbox13"></td>
+  </tr>
+  <tr>
+    <td rowspan="6" >Sistema Eléctrico</td>
+    <td >N/P    ECM QUANTUM</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox14" id="checkbox14"></td>
+  </tr>
+  <tr>
+    <td >N/S ECM Quantum</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox15" id="checkbox15"></td>
+  </tr>
+  <tr>
+    <td >Código de calibración</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox16" id="checkbox16"></td>
+  </tr>
+  <tr>
+    <td >N/P ECM Cense</td>
+    <td colspan="3" ><input type="text" name="textfield20" id="textfield20"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox17" id="checkbox17"></td>
+  </tr>
+  <tr>
+    <td >N/S ECM Cense</td>
+    <td colspan="3" ><input type="text" name="textfield21" id="textfield21"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox18" id="checkbox18"></td>
+  </tr>
+  <tr>
+    <td >Código de calibración</td>
+    <td colspan="3" ><input type="text" name="textfield22" id="textfield22"></td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox19" id="checkbox19"></td>
+  </tr>
+  <tr>
+    <td ></td>
+    <td ></td>
+    <td ></td>
+    <td width="38"></td>
+    <td width="95"></td>
+    <td width="114"></td>
+    <td width="76"></td>
+    <td width="38"></td>
+  </tr>
+  <tr>
+    <td colspan="2" ><strong>Chequear durante la operación del motor</strong></td>
+    <td colspan="2" align="center" ><strong>SI</strong></td>
+    <td colspan="2" align="center"><strong>NO</strong></td>
+    <td colspan="2" align="center"><strong>NO    APLICA</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Ruidos    anormales</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="radio4" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="radio4" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="radio4" value="radio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Operación    del acelerador</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_17_garantia" id="radio4" value="s"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_17_garantia" id="radio4" value="n"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_17_garantia" id="radio4" value="a"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Fugas    de combustible, lubricante, aceite o refrigerante</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_18_garantia" id="radio4" value="s"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_18_garantia" id="radio4" value="n"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_18_garantia" id="radio4" value="a"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Medidores    defectuosos o inoperativos</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_19_garantia" id="radio4" value="s"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_19_garantia" id="radio4" value="n"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_19_garantia" id="radio4" value="a"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Fallas    en el sistema de admisión de aire</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_20_garantia" id="radio4" value="s"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_20_garantia" id="radio4" value="n"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_20_garantia" id="radio4" value="a"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Fallas    en el sistema de escape</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_21_garantia" id="radio4" value="s"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_21_garantia" id="radio4" value="n"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="pm_21_garantia" id="radio4" value="a"></td>
+  </tr>
+  <tr>
+    <td ></td>
+    <td ></td>
+    <td ></td>
+    <td width="38"></td>
+    <td width="95"></td>
+    <td width="114"></td>
+    <td width="76"></td>
+    <td width="38"></td>
+  </tr>
+  <tr>
+    <td colspan="2" ></td>
+    <td colspan="3" align="center" ><strong>MEDIDA</strong></td>
+    <td colspan="3" align="center"><strong>NO    APLICA</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Velocidad    motor en ralentí</td>
+    <td colspan="2" ><input type="text" name="textfield23" id="textfield23"></td>
+    <td width="95">RPM</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox20" id="checkbox20"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Presión    de aceite en ralentí</td>
+    <td colspan="2" ><input type="text" name="textfield24" id="textfield24"></td>
+    <td width="95">PSI</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox21" id="checkbox21"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Temperatura    de aceite</td>
+    <td colspan="2" ><input type="text" name="textfield25" id="textfield25"></td>
+    <td width="95">°F</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox22" id="checkbox22"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Temperatura    de refrigerante</td>
+    <td colspan="2" ><input type="text" name="textfield26" id="textfield26"></td>
+    <td width="95">°F</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox23" id="checkbox23"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Restricción    línea alimentación de combustible</td>
+    <td colspan="2" ><input type="text" name="textfield27" id="textfield27"></td>
+    <td width="95">Inch    Hg</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox24" id="checkbox24"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Restricción    línea retorno de combustible</td>
+    <td colspan="2" ><input type="text" name="textfield28" id="textfield28"></td>
+    <td width="95">Inch    Hg</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox25" id="checkbox25"></td>
+  </tr>
+  <tr>
+    <td ></td>
+    <td ></td>
+    <td ></td>
+    <td width="38"></td>
+    <td width="95"></td>
+    <td width="114" align="center"></td>
+    <td width="76" align="center"></td>
+    <td width="38" align="center"></td>
+  </tr>
+  <tr>
+    <td colspan="2" ><strong>Registrar    las siguientes mediciones a través de los sistemas Quantum o Cense mientras    el motor está funcionando a máxima potencia/aceleración:</strong></td>
+    <td colspan="3" align="center" ><strong>MEDIDA</strong></td>
+    <td colspan="3" align="center"><strong>NO    APLICA</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Velocidad    motor</td>
+    <td colspan="2" ><input type="text" name="textfield29" id="textfield29"></td>
+    <td width="95">RPM</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox23" id="checkbox23"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Presión    aceite lubricante</td>
+    <td colspan="2" ><input type="text" name="textfield30" id="textfield30"></td>
+    <td width="95">PSI</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox24" id="checkbox24"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Presión    combustible en el riel</td>
+    <td colspan="2" ><input type="text" name="textfield31" id="textfield31"></td>
+    <td width="95">PSI</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox25" id="checkbox25"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Temperatura    de escape</td>
+    <td colspan="2" ><input type="text" name="textfield32" id="textfield32"></td>
+    <td width="95">°F</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox23" id="checkbox23"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Temperatura    de agua motor</td>
+    <td colspan="2" ><input type="text" name="textfield33" id="textfield33"></td>
+    <td width="95">°F</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox23" id="checkbox23"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Temperatura    en el múltiple de admisión</td>
+    <td colspan="2" ><input type="text" name="textfield34" id="textfield34"></td>
+    <td width="95">°F</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox23" id="checkbox23"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Potencia    de salida</td>
+    <td colspan="2" ><input type="text" name="textfield35" id="textfield35"></td>
+    <td width="95">BHP</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox24" id="checkbox24"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >Presión    de blowby</td>
+    <td colspan="2" ><input type="text" name="textfield36" id="textfield36"></td>
+    <td width="95">Inch    H2O</td>
+    <td colspan="3" align="center"><input type="checkbox" data-role="none" name="checkbox25" id="checkbox25"></td>
+  </tr>
+  <tr>
+    <td ></td>
+    <td ></td>
+    <td ></td>
+    <td width="38"></td>
+    <td width="95"></td>
+    <td width="114"></td>
+    <td width="76"></td>
+    <td width="38"></td>
+  </tr>
+  <tr>
+    <td colspan="8" ><em>Nota: Para la revisión de los demás datos    operacionales se debe enviar una Trend Data o DataLogger Cense de la prueba    de potencia y una imagen Quantum (tomada en prueba de parrilla camiones    eléctricos).</em></td>
+  </tr>
+  <tr>
+    <td ></td>
+    <td ></td>
+    <td ></td>
+    <td width="38"></td>
+    <td width="95"></td>
+    <td width="114"></td>
+    <td width="76"></td>
+    <td width="38"></td>
+  </tr>
+  <tr>
+    <td colspan="8" >Observaciones:
+      <input type="text" name="textfield54" id="textfield54"></td>
+  </tr>
+  <tr>
+    <td ></td>
+    <td ></td>
+    <td ></td>
+    <td width="38"></td>
+    <td width="95"></td>
+    <td width="114"></td>
+    <td width="76"></td>
+    <td width="38"></td>
+  </tr>
+  <tr>
+    <td colspan="2" ><strong>INSTRUIR    AL CLIENTE</strong></td>
+    <td colspan="2" align="center" ><strong>SI</strong></td>
+    <td colspan="2" align="center"><strong>NO</strong></td>
+    <td colspan="2" align="center"><strong>NO    APLICA</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" >1.&nbsp;&nbsp;&nbsp;    Cambio de filtros de combustible y aceite lubricante</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_22_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_22_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_22_garantia" value="radio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >2.&nbsp;&nbsp;&nbsp;    Cambio de aceite lubricante</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_23_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_23_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_23_garantia" value="radio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >3.&nbsp;&nbsp;&nbsp;    Uso de combustible y aceite lubricante apropiados</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_24_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_24_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_24_garantia" value="radio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >4.&nbsp;&nbsp;&nbsp;    Temperatura de operación</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_25_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_25_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_25_garantia" value="radio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >5.&nbsp;&nbsp;&nbsp;    Procedimientos de partida y parada</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_26_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_26_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_26_garantia" value="radio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >6.&nbsp;&nbsp;&nbsp;    Daños causados por sobre velocidad</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_27_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_27_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_27_garantia" value="radio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >7.&nbsp;&nbsp;&nbsp;    Uso de inhibidores de corrosión y anticongelante</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_28_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_28_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_28_garantia" value="radio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >8.&nbsp;&nbsp;&nbsp;    Uso de aparatos para partida en frio</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_29_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_29_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_29_garantia" value="radio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >9.&nbsp;&nbsp;&nbsp;    Mantenimiento de filtrado de aire</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_30_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_30_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_30_garantia" value="radio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >10.&nbsp;    Mantenimiento de correas</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_31_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_31_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_31_garantia" value="radio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >11.&nbsp;    Cobertura de garantía</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_32_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_32_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_32_garantia" value="radio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" >12.&nbsp;    Información del manual del OEM (fabricante equipo)</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_33_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_33_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_33_garantia" value="radio"></td>
+  </tr>
+  <tr>
+    <td colspan="2" ><strong>Confirme    la siguiente certificación del cliente</strong></td>
+    <td colspan="2" align="center" ><strong>SI</strong></td>
+    <td colspan="2" align="center"><strong>NO</strong></td>
+    <td colspan="2" align="center"><strong>NO    APLICA</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2" >El    cliente ha sido instruido sistemáticamente en ajustes de importancia,    operación segura, y cobertura de garantía del motor indicado en este reporte.    La inspección detallada anteriormente ha sido realizada y el chequeo de    motores marinos ha sido completado (solo en motores marinos).</td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_34_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_34_garantia" value="radio"></td>
+    <td colspan="2" align="center"><input type="radio" data-role="none" name="radio" id="pm_34_garantia" value="radio"></td>
+  </tr>
+</table>
+<p>
+	<input name="b_avanzar" class="b_avanzar" type="button" value="Siguiente" next="p16_trabajo_finalizado" data-theme="b" />
+</p>
+
+
+</div>
+<div data-role="footer" data-theme="b">
+	<div data-role="navbar">
+		<ul>
+			<li><a href="../datos/p2_tecnicos.html" class="ui-btn nav-btn" data-icon="home" data-iconpos="left" data-theme="b">Inicio</a></li>
+			<li><a href="#" class="ui-btn nav-btn volver" data-icon="arrow-l" data-iconpos="left" data-theme="b">Volver</a></li>
+			<li><a href="../datos/p1_login.html" class="ui-btn nav-btn" data-icon="delete" data-iconpos="left" data-theme="b">Salir</a></li>
+		</ul>
+	</div>
+</div>
+</div>
+</body>
+</html>

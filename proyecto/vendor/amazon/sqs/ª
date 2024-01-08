@@ -1,0 +1,45 @@
+<?php
+	ini_set('memory_limit','16M');
+	require 'aws-autoloader.php';
+	// Use the us-west-2 region and latest version of each client.
+	$sharedConfig = [
+		'region'  => 'us-east-2',
+		'version' => 'latest',
+		'credentials' => [
+			'key'    => 'AKIAIEBWQIAFWIRNPKBQ',
+			'secret' => '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',
+		],
+	];
+
+	// Create an SDK class used to share configuration across clients.
+	$sqs_client = new Aws\Sqs\SqsClient($sharedConfig);
+
+	// Get the queue URL from the queue name.
+    $result = $sqs_client->getQueueUrl(array('QueueName' => "sis-rai-sqs-sync.fifo"));
+    $queue_url = $result->get('QueueUrl');
+
+	// Receive a message from the queue
+    $result = $sqs_client->receiveMessage(array(
+        'QueueUrl' => $queue_url,
+	'MaxNumberOfMessages' => 1,
+	'MessageAttributeNames' => ['Folio', 'Faena','Flota','Unidad','TipoIntervencion','Hijo','Padre','Json']
+    ));
+	
+
+/*'AttributeNames' => ['<string>', ...],
+    'MaxNumberOfMessages' => <integer>,
+    'MessageAttributeNames' => ['<string>', ...],*/
+
+    if ($result['Messages'] == null) {
+        // No message to process
+        exit;
+    }else{
+		print_r($result);
+	}
+
+    // Get the message information
+    //$result_message = array_pop($result['Messages']);
+    //$queue_handle = $result_message['ReceiptHandle'];
+    //$message_json = $result_message['Body'];
+	
+?>
